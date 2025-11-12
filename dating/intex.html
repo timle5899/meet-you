@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meet real people | Join free</title>
+  <meta name="description" content="Simple, compliant dating landing page for English markets. Built-in A/B copy and lightweight click tracking." />
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph (basic) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Meet real people | Join free" />
+  <meta property="og:description" content="Real profiles, privacy-first. It’s free and takes under 60 seconds to start." />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/eeeeee/333333&text=Dating+Landing+Page" />
+
+  <!-- Favicon & Font -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💖</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#ff3e6c; --brand-600:#e83460; --ink:#0f172a; --muted:#475569; --bg:#ffffff; --card:#f8fafc; --ring: rgba(255,62,108,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+
+    /* Nav */
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800}
+    .logo-badge{width:36px;height:36px;border-radius:12px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:700}
+    .nav-cta{display:flex;gap:12px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:700;border:1px solid transparent;transition:.2s ease;background:#fff;color:var(--ink)}
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-primary:hover{background:var(--brand-600);transform:translateY(-1px)}
+    .btn-outline{border-color:#e2e8f0;background:#fff}
+    .btn-outline:hover{box-shadow:0 0 0 6px var(--ring)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:24px 0}
+    .hero h1{font-size:40px;line-height:1.15;margin:0 0 10px}
+    .hero p{font-size:18px;color:var(--muted);margin:0 0 18px}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;color:var(--muted)}
+    .kpi{background:var(--card);padding:8px 12px;border-radius:999px;font-size:14px}
+
+    .hero-img{position:relative;isolation:isolate}
+    .photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .photo{border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);aspect-ratio:4/5;background:#ddd}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .badge{position:absolute;bottom:-10px;left:-10px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+
+    /* Features (very simple) */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
+    .card{background:var(--card);padding:16px;border-radius:16px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .quote{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px}
+    .quote p{margin:0 0 8px}
+    .quote .who{font-size:14px;color:var(--muted)}
+
+    /* CTA */
+    .cta-block{margin:34px 0;background:linear-gradient(135deg,var(--brand),#ff8fab);border-radius:20px;color:#fff;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .cta-block h2{margin:0;font-size:24px}
+    .cta-block small{opacity:.9}
+    .cta-block .actions{display:flex;gap:10px}
+    .cta-block .btn{background:#fff;color:var(--ink)}
+
+    /* FAQ */
+    details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+    summary::-webkit-details-marker{display:none}
+
+    /* Footer */
+    footer{margin:40px 0 20px;color:var(--muted);font-size:14px}
+    .legal{display:flex;gap:16px;flex-wrap:wrap}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .testimonials{grid-template-columns:1fr}
+      .cta-block{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <header class="container nav" aria-label="Main navigation">
+    <div class="logo" aria-label="Brand">
+      <div class="logo-badge" aria-hidden="true">❤</div>
+      <span>MeetMatch</span>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="#how" data-track="nav_how">How it works</a>
+      <a class="btn btn-primary" id="nav-signup" href="#signup" data-track="nav_signup">Join free</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div>
+        <h1 id="hero-title">Meet the right people—starting today</h1>
+        <p id="hero-sub">Real profiles. Safety first. It’s free and takes under 60 seconds to start.</p>
+
+        <div class="nav-cta" style="margin-top:8px">
+          <a class="btn btn-primary" id="hero-signup" href="#signup" data-track="hero_signup">Join free</a>
+          <a class="btn btn-outline" href="#trust" data-track="hero_trust">Why choose us</a>
+        </div>
+
+        <div class="kpis" aria-label="highlights">
+          <div class="kpi">✓ Verified photos</div>
+          <div class="kpi">✓ Privacy‑first</div>
+          <div class="kpi">✓ Anti‑scam tips</div>
+        </div>
+      </div>
+
+      <div class="hero-img" aria-label="Gallery">
+        <div class="photo-grid">
+          <!-- Non‑explicit, healthy portraits. Replace with your licensed assets before launch. -->
+          <figure class="photo"><img alt="Smiling portrait" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" loading="lazy"></figure>
+          <figure class="photo"><img alt="Lifestyle portrait outdoors" src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=800&auto=format&fit=crop" loading="lazy"></figure>
+          <figure class="photo"><img alt="City portrait" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop" loading="lazy"></figure>
+          <figure class="photo"><img alt="Cafe portrait" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=800&auto=format&fit=crop" loading="lazy"></figure>
+        </div>
+        <div class="badge" aria-live="polite"><strong>Just launched:</strong> <span id="badge-body">Real people, zero awkward sign‑up</span></div>
+      </div>
+    </section>
+
+    <!-- Simple features -->
+    <section class="features" id="how">
+      <article class="card">
+        <h3>Sign up in a minute</h3>
+        <p>No hassle. Create your profile and start browsing right away.</p>
+      </article>
+      <article class="card">
+        <h3>Authentic connections</h3>
+        <p>Verified photos and better matches—skip the fakes and spam.</p>
+      </article>
+      <article class="card">
+        <h3>Privacy you control</h3>
+        <p>Share only what you want. Report & block in one tap.</p>
+      </article>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" aria-label="What members say" id="trust">
+      <blockquote class="quote">
+        <p>“Took 60 seconds to join and I got quality chats the same day.”</p>
+        <div class="who">— Emily</div>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“Feels safer and more real than others. I like the photo checks.”</p>
+        <div class="who">— Daniel</div>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“No time wasted. Matches actually share my interests.”</p>
+        <div class="who">— Ava</div>
+      </blockquote>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-block" id="signup" aria-label="Sign up">
+      <div>
+        <h2 id="cta-title">Create a free account and start meeting real people</h2>
+        <small id="cta-note">100% free to join · Under 60 seconds</small>
+      </div>
+      <div class="actions">
+        <a class="btn" id="cta-signup" href="#" rel="nofollow noopener" data-track="cta_signup">Join free</a>
+        <a class="btn btn-outline" href="#faq" data-track="cta_more">Learn more</a>
+      </div>
+    </section>
+
+    <!-- FAQ (compliance & safety) -->
+    <section id="faq" aria-label="FAQ" style="margin:28px 0">
+      <details>
+        <summary>Is this for adults 18+ only?</summary>
+        <div>Yes. This page is for lawful, non‑explicit dating between consenting adults (18+). No explicit content or services.</div>
+      </details>
+      <details>
+        <summary>How do you keep things safe?</summary>
+        <div>Photo checks, privacy controls, and anti‑scam tips are built‑in. Never send money or private info to people you don’t know.</div>
+      </details>
+      <details>
+        <summary>How do I join?</summary>
+        <div>Tap “Join free”, create your profile, and start browsing. It takes under 60 seconds.</div>
+      </details>
+    </section>
+
+    <footer>
+      <div class="legal">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Community Guidelines</a>
+      </div>
+      <p style="margin-top:10px">© <span id="y"></span> MeetMatch. Adults 18+ only. Non‑explicit dating. Follow local laws and ad policies.</p>
+      <noscript>This page uses a tiny script for A/B copy and click tracking. It still works without JavaScript, but insights will be limited.</noscript>
+    </footer>
+  </main>
+
+  <script>
+    // ========== URL params (simple) ==========
+    const params = new URLSearchParams(location.search);
+    const signup = params.get('signup') || '#';  // Your registration link
+    const ab = (params.get('ab') || 'a').toLowerCase();
+    const debug = params.get('debug') === '1';
+
+    // Point all CTAs to signup
+    ['cta-signup','hero-signup','nav-signup'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.setAttribute('href', signup);
+    });
+
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // ========== A/B copy (English only) ==========
+    const variants = {
+      a: {
+        heroTitle: 'Meet the right people—starting today',
+        heroSub:   'Real profiles. Safety first. It’s free and takes under 60 seconds to start.',
+        ctaTitle:  'Create a free account and start meeting real people',
+        ctaLabel:  'Join free',
+        ctaNote:   '100% free to join · Under 60 seconds',
+        badge:     'Real people, zero awkward sign‑up'
+      },
+      b: {
+        heroTitle: 'Real people. Real dates. Start in 60 seconds.',
+        heroSub:   'No spam, no fake bots. Verified photos and better matches—join in under a minute.',
+        ctaTitle:  'Start now and get your first matches today',
+        ctaLabel:  'Start now',
+        ctaNote:   'Takes < 60 seconds · Free to join',
+        badge:     'Verified photos · Privacy‑first'
+      }
+    };
+
+    const v = variants[ab] || variants.a;
+    document.getElementById('hero-title').textContent = v.heroTitle;
+    document.getElementById('hero-sub').textContent   = v.heroSub;
+    document.getElementById('cta-title').textContent  = v.ctaTitle;
+    document.getElementById('cta-note').textContent   = v.ctaNote;
+    document.getElementById('badge-body').textContent = v.badge;
+    const heroCta = document.getElementById('hero-signup'); if(heroCta) heroCta.textContent = v.ctaLabel;
+    const ctaBtn  = document.getElementById('cta-signup'); if(ctaBtn)  ctaBtn.textContent  = v.ctaLabel;
+
+    // ========== Lightweight tracking ==========
+    function track(event, meta={}){
+      try{
+        const payload = {
+          event, ...meta,
+          ab, signup,
+          ts: Date.now(),
+          path: location.pathname + location.search,
+          utm_source: params.get('utm_source')||'',
+          utm_medium: params.get('utm_medium')||'',
+          utm_campaign: params.get('utm_campaign')||''
+        };
+        if(window.dataLayer && Array.isArray(window.dataLayer)){
+          window.dataLayer.push(payload);
+        }
+        if(typeof window.gtag === 'function'){
+          window.gtag('event', event, payload);
+        }
+        if(debug) console.log('[track]', payload);
+      }catch(e){ if(debug) console.warn('track error', e); }
+    }
+
+    // Bind click tracking
+    document.addEventListener('click', (e)=>{
+      const el = e.target.closest('[data-track]');
+      if(!el) return;
+      const name = el.getAttribute('data-track');
+      track(name, { href: el.getAttribute('href')||'', text: (el.textContent||'').trim().slice(0,120) });
+    });
+
+    // Track FAQ open
+    document.querySelectorAll('details').forEach(d=>{
+      d.addEventListener('toggle', ()=>{
+        if(d.open) track('faq_open', {summary: d.querySelector('summary')?.textContent?.trim().slice(0,120)});
+      });
+    });
+
+    // Pageview
+    track('page_view');
+
+    // Accessibility: focus outline visible
+    const style = document.createElement('style');
+    style.textContent = `:focus{outline:3px solid ${getComputedStyle(document.documentElement).getPropertyValue('--brand')};outline-offset:2px}`;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
